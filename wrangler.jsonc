@@ -1,0 +1,68 @@
+{
+  "name": "capidemo",
+  "main": "./worker-entry.ts",
+  "compatibility_date": "2025-02-28",
+  "compatibility_flags": ["nodejs_compat"],
+  "account_id": "b652fa39b4da0c4f082662c4c364ad01",
+
+  "routes": [
+    { "pattern": "capidemo.com/*", "zone_name": "capidemo.com" },
+    { "pattern": "www.capidemo.com/*", "zone_name": "capidemo.com" }
+  ],
+
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "capidemo_d1",
+      "database_id": "TODO_REPLACE_AFTER_CREATION",
+      "migrations_dir": "./drizzle"
+    }
+  ],
+
+  "kv_namespaces": [
+    {
+      "binding": "SESSIONS_KV",
+      "id": "TODO_REPLACE_AFTER_CREATION"
+    },
+    {
+      "binding": "OAUTH_KV",
+      "id": "TODO_REPLACE_AFTER_CREATION"
+    },
+    {
+      "binding": "CACHE_KV",
+      "id": "TODO_REPLACE_AFTER_CREATION"
+    }
+  ],
+
+  "r2_buckets": [
+    {
+      "binding": "R2",
+      "bucket_name": "capidemo_r2"
+    }
+  ],
+
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "CHAT_SESSION_DO",
+        "class_name": "ChatSessionDO"
+      },
+      {
+        "name": "ORDER_UPDATES_DO",
+        "class_name": "OrderUpdatesDO"
+      }
+    ]
+  },
+
+  "ai": {
+    "binding": "AI"
+  },
+
+  "migrations": [
+    { "tag": "v1", "new_classes": ["ChatSessionDO", "OrderUpdatesDO"] }
+  ],
+
+  // Secrets are in .dev.vars (local) and Cloudflare dashboard (production)
+  // JWT_SECRET, GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET
+  "vars": {}
+}
