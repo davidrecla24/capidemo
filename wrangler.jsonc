@@ -14,7 +14,7 @@
     {
       "binding": "DB",
       "database_name": "capidemo_d1",
-      "database_id": "TODO_REPLACE_AFTER_CREATION",
+      "database_id": "27ccc392-0fa7-4189-8742-524523aee250",
       "migrations_dir": "./drizzle"
     }
   ],
@@ -22,22 +22,22 @@
   "kv_namespaces": [
     {
       "binding": "SESSIONS_KV",
-      "id": "TODO_REPLACE_AFTER_CREATION"
+      "id": "f06a6d3136da4dd48b092ee05c0dbb66"
     },
     {
       "binding": "OAUTH_KV",
-      "id": "TODO_REPLACE_AFTER_CREATION"
+      "id": "18d459b971114d7bb5405e54f9a00fca"
     },
     {
       "binding": "CACHE_KV",
-      "id": "TODO_REPLACE_AFTER_CREATION"
+      "id": "ca10a9963837477cb8de49c5b1388745"
     }
   ],
 
   "r2_buckets": [
     {
       "binding": "R2",
-      "bucket_name": "capidemo_r2"
+      "bucket_name": "capidemo-r2"
     }
   ],
 
