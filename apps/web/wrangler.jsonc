@@ -1,0 +1,68 @@
+{
+	"name": "adlai-web",
+	"compatibility_date": "2025-01-01",
+	"main": "src/server/index.ts",
+	// Assets (Vite build output served by Workers)
+	"assets": {
+		"directory": "dist/client",
+		"binding": "ASSETS"
+	},
+	// D1 database
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "adlai-d1",
+			"database_id": "ab5c75ab-a750-4205-a588-f66ceb920571",
+			"migrations_dir": "migrations",
+			"preview_database_id": "ab5c75ab-a750-4205-a588-f66ceb920571"
+		}
+	],
+	// R2 bucket
+	"r2_buckets": [
+		{
+			"binding": "FILES",
+			"bucket_name": "adlai-files",
+			"remote": true
+		}
+	],
+	// KV namespaces
+	"kv_namespaces": [
+		{
+			"binding": "CACHE",
+			"id": "7b3187fe01b441c29f6b2bbbc6a32629",
+			"remote": true
+		}
+	],
+	// Workers AI
+	"ai": {
+		"binding": "AI"
+	},
+	// Durable Objects
+	"durable_objects": {
+		"bindings": [
+			{
+				"name": "ORDER_COORDINATOR",
+				"class_name": "OrderCoordinator"
+			},
+			{
+				"name": "CHAT_SESSION",
+				"class_name": "ChatSession"
+			}
+		]
+	},
+	"migrations": [
+		{
+			"tag": "v1",
+			"new_sqlite_classes": [
+				"OrderCoordinator",
+				"ChatSession"
+			]
+		}
+	],
+	// Custom domain routing
+	"routes": [
+		{ "pattern": "capidemo.com", "custom_domain": true },
+		{ "pattern": "www.capidemo.com", "custom_domain": true }
+	],
+	"workers_dev": true
+}

@@ -1,0 +1,5 @@
+{
+  "name": "adlai-mcp-admin",
+  "compatibility_date": "2025-01-01",
+  "main": "src/index.ts"
+}

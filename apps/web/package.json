@@ -1,0 +1,48 @@
+{
+  "name": "@adlai/web",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "wrangler d1 migrations apply DB --local",
+    "db:migrate:remote": "wrangler d1 migrations apply DB --remote",
+    "seed": "wrangler d1 execute DB --local --file=src/server/db/seed.sql",
+    "seed:remote": "wrangler d1 execute DB --remote --file=src/server/db/seed.sql"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.1.0",
+    "@tanstack/react-query": "^5.62.0",
+    "hono": "^4.6.0",
+    "zod": "^3.24.0",
+    "drizzle-orm": "^0.38.0",
+    "jose": "^6.0.0",
+    "nanoid": "^5.0.0",
+    "date-fns": "^4.1.0",
+    "clsx": "^2.1.0",
+    "tailwind-merge": "^2.6.0",
+    "class-variance-authority": "^0.7.0",
+    "lucide-react": "^0.468.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.0",
+    "vite": "^6.0.0",
+    "@cloudflare/vite-plugin": "^1.0.0",
+    "wrangler": "^4.71.0",
+    "drizzle-kit": "^0.30.0",
+    "tailwindcss": "^4.0.0",
+    "@tailwindcss/vite": "^4.0.0",
+    "vitest": "^3.0.0",
+    "@cloudflare/vitest-pool-workers": "^0.8.0",
+    "@cloudflare/workers-types": "^4.20250109.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0"
+  }
+}
